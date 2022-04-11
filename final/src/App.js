@@ -18,7 +18,7 @@ function App() {
     dispatch(getCartItems('random'));
   }, []);
 
-  if (isLoading) {
+    if (isLoading) {
     return (
       <div className='loading'>
         <h1>Loading...</h1>
@@ -26,7 +26,7 @@ function App() {
     );
   }
 
-  return (
+   return (
     <main>
       {isOpen && <Modal />}
       <Navbar />
