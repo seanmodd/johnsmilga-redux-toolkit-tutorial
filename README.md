@@ -1,3 +1,4 @@
+Great starting point is here
 # johnsmilga-redux-toolkit-tutorial
 
 # Redux Toolkit
@@ -693,10 +694,7 @@ export const getCartItems = createAsyncThunk(
       // thunkAPI.dispatch(openModal());
       const resp = await axios(url);
 
-      return resp.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue('something went wrong');
-    }
+
   }
 );
 ```
