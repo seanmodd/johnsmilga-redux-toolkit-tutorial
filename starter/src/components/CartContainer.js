@@ -1,6 +1,7 @@
 import React from 'react';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
+import {clearCart} from '../features/cart/cartSlice';
 // import { openModal } from '../features/modal/modalSlice';
 
 const CartContainer = () => {
@@ -17,16 +18,16 @@ const CartContainer = () => {
       </section>
     );
   }
-const myCartItems =      cartItems.map((item) => {
-  return <CartItem key={item.id} {...item} />;
-})
+
   return (
     <section className='cart'>
       <header>
         <h2>your bag</h2>
       </header>
       <div>
-      <myCartItems />  
+{ cartItems.map((item) => {
+  return <CartItem key={item.id} {...item} />;
+})}
       </div>
       <footer>
         <hr />
@@ -36,7 +37,9 @@ const myCartItems =      cartItems.map((item) => {
           </h4>
         </div>
         <button className='btn clear-btn' onClick={
-          console.log("dispatch(openModal()) dispatch")
+          // console.log("dispatch(clearCart()) dispatch")
+          () => dispatch(clearCart())
+          // console.log("dispatch(openModal()) dispatch")
           // () => dispatch(openModal())
           
           }>

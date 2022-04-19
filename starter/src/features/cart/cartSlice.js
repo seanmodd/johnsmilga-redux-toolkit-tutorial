@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { openModal } from '../modal/modalSlice';
-
+// import { openModal } from '../modal/modalSlice';
+import CartItems from '../../cartItems';
 const url = 'https://course-api.com/react-useReducer-cart-project';
 
 const initialState = {
-  cartItems: [],
-  amount: 45,
+  cartItems: CartItems,
+  amount: 4,
   total: 0,
   isLoading: false,
 };
@@ -18,6 +18,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     clearCart: (state) => {
+      console.log("dispatch(clearCart()) dispatch")
       state.cartItems = [];
     },
   },
